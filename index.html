@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>石器时代觉醒 - 官方网站</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- 石器时代装饰元素 -->
+        <div class="stone-age-decorations">
+            <div class="decoration stone-1">🗿</div>
+            <div class="decoration stone-2">⚔️</div>
+            <div class="decoration stone-3">🛡️</div>
+            <div class="decoration stone-4">🏹</div>
+            <div class="decoration stone-5">🔥</div>
+        </div>
+        
+        <!-- 头部标题区域 -->
+        <header class="header">
+            <div class="logo-container">
+                <img src="logo.svg" alt="石器时代觉醒" class="game-logo" onerror="this.src='https://via.placeholder.com/120x120/FFD700/2C3E50?text=石器时代'">
+            </div>
+            <h1 class="game-title">石器时代觉醒</h1>
+            <p class="subtitle">账号需在本网页注册，登录游戏使用账号密码登录！所有游戏福利均在本网页领取！游戏内无法领取！</p>
+        </header>
+
+        <!-- 主要功能区域 -->
+        <main class="main-content">
+            <div class="function-grid">
+                <div class="function-card" id="register-card">
+                    <div class="card-icon">📝</div>
+                    <h3>注册地址</h3>
+                    <p>创建游戏账号</p>
+                    <button class="btn btn-primary" onclick="openRegister()">立即注册</button>
+                </div>
+
+                <div class="function-card" id="download-card">
+                    <div class="card-icon">📱</div>
+                    <h3>双端下载地址</h3>
+                    <p>iOS & Android</p>
+                    <button class="btn btn-secondary" onclick="openDownload()">下载游戏</button>
+                </div>
+
+                <div class="function-card" id="recharge-card">
+                    <div class="card-icon">💳</div>
+                    <h3>充值中心</h3>
+                    <p>安全便捷充值</p>
+                    <button class="btn btn-accent" onclick="openRecharge()">立即充值</button>
+                </div>
+
+                <div class="function-card" id="welfare-card">
+                    <div class="card-icon">🎁</div>
+                    <h3>福利中心</h3>
+                    <p>版本设定、每日、累充福利</p>
+                    <button class="btn btn-success" onclick="openWelfare()">领取福利</button>
+                </div>
+
+                <div class="function-card" id="cdk-card">
+                    <div class="card-icon">💬</div>
+                    <h3>CDK礼包QQ群</h3>
+                    <p>群号：1049395907</p>
+                    <div class="cdk-buttons">
+                        <button class="btn btn-copy" onclick="copyQQGroup()">复制群号</button>
+                        <button class="btn btn-primary" onclick="openCDKClaim()">CDK领取</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- 页脚 -->
+        <footer class="footer">
+            <p>&copy; 2024 石器时代觉醒. 保留所有权利.</p>
+        </footer>
+    </div>
+
+    <!-- 模态框 -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

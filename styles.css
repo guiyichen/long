@@ -1,0 +1,573 @@
+/* 全局样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans SC', sans-serif;
+    background: 
+        linear-gradient(135deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.3) 100%),
+        url('https://api.suyanw.cn/api/comic3.php');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    color: #333;
+    line-height: 1.6;
+    position: relative;
+}
+
+/* 添加背景装饰层 */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 140, 0, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(255, 69, 0, 0.06) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* 添加游戏氛围光效 */
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(255, 215, 0, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 140, 0, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(255, 69, 0, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 60% 60%, rgba(255, 215, 0, 0.05) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: -1;
+    animation: backgroundGlow 8s ease-in-out infinite;
+}
+
+/* 背景光效动画 */
+@keyframes backgroundGlow {
+    0%, 100% {
+        opacity: 0.8;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+/* 石器时代装饰元素 */
+.stone-age-decorations {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.decoration {
+    position: absolute;
+    font-size: 2rem;
+    opacity: 0.1;
+    animation: float 6s ease-in-out infinite;
+}
+
+.stone-1 {
+    top: 10%;
+    left: 5%;
+    animation-delay: 0s;
+}
+
+.stone-2 {
+    top: 20%;
+    right: 10%;
+    animation-delay: 1s;
+}
+
+.stone-3 {
+    top: 60%;
+    left: 8%;
+    animation-delay: 2s;
+}
+
+.stone-4 {
+    top: 70%;
+    right: 5%;
+    animation-delay: 3s;
+}
+
+.stone-5 {
+    top: 40%;
+    left: 50%;
+    animation-delay: 4s;
+}
+
+/* 装饰元素浮动动画 */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+        opacity: 0.1;
+    }
+    25% {
+        transform: translateY(-10px) rotate(5deg);
+        opacity: 0.2;
+    }
+    50% {
+        transform: translateY(-5px) rotate(-3deg);
+        opacity: 0.15;
+    }
+    75% {
+        transform: translateY(-15px) rotate(3deg);
+        opacity: 0.2;
+    }
+}
+
+/* 头部样式 */
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+    background: 
+        linear-gradient(145deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 249, 250, 0.95) 100%);
+    padding: 40px 30px;
+    border-radius: 25px;
+    box-shadow: 
+        0 15px 35px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9),
+        0 0 0 2px rgba(255, 215, 0, 0.3);
+    backdrop-filter: blur(20px);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Logo容器样式 */
+.logo-container {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-logo {
+    width: 120px;
+    height: 120px;
+    border-radius: 20px;
+    box-shadow: 
+        0 8px 25px rgba(0, 0, 0, 0.3),
+        0 0 20px rgba(255, 215, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    border: 3px solid rgba(255, 215, 0, 0.4);
+    transition: all 0.3s ease;
+    object-fit: cover;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(248, 249, 250, 0.8));
+    padding: 5px;
+}
+
+.game-logo:hover {
+    transform: scale(1.05) rotate(2deg);
+    box-shadow: 
+        0 12px 35px rgba(0, 0, 0, 0.4),
+        0 0 30px rgba(255, 215, 0, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    border-color: rgba(255, 215, 0, 0.6);
+}
+
+/* 头部装饰效果 */
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, 
+        #ffd700 0%, 
+        #ff8c00 20%, 
+        #ff6347 40%, 
+        #ff4500 60%, 
+        #ff6347 80%, 
+        #ffd700 100%);
+    border-radius: 25px 25px 0 0;
+}
+
+.header::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: 
+        radial-gradient(circle at 30% 30%, rgba(255, 215, 0, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 70% 70%, rgba(255, 140, 0, 0.03) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+.game-title {
+    font-size: 3rem;
+    font-weight: 700;
+    background: linear-gradient(45deg, 
+        #ffd700 0%, 
+        #ff8c00 25%, 
+        #ff6347 50%, 
+        #ff4500 75%, 
+        #ffd700 100%);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    animation: titleShine 3s ease-in-out infinite;
+    position: relative;
+}
+
+/* 标题发光动画 */
+@keyframes titleShine {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+/* 主要内容区域 */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.function-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+/* 当有5个卡片时，确保最后一行居中 */
+.function-grid:has(.function-card:nth-child(5)) {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 900px;
+    margin: 0 auto 40px auto;
+}
+
+/* 响应式：在较小屏幕上调整为2列 */
+@media (max-width: 900px) {
+    .function-grid:has(.function-card:nth-child(5)) {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 600px;
+    }
+}
+
+/* 响应式：在手机屏幕上调整为1列 */
+@media (max-width: 600px) {
+    .function-grid:has(.function-card:nth-child(5)) {
+        grid-template-columns: 1fr;
+        max-width: 300px;
+    }
+}
+
+.function-card {
+    background: 
+        linear-gradient(145deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 249, 250, 0.95) 100%);
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 
+        0 8px 25px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9),
+        0 0 0 1px rgba(255, 215, 0, 0.2);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(15px);
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 石器时代主题的卡片装饰 */
+.function-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, 
+        #ffd700 0%, 
+        #ff8c00 25%, 
+        #ff6347 50%, 
+        #ff8c00 75%, 
+        #ffd700 100%);
+    border-radius: 20px 20px 0 0;
+}
+
+.function-card::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: 
+        radial-gradient(circle, rgba(255, 215, 0, 0.03) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.function-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.25),
+        0 0 20px rgba(255, 215, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    border-color: rgba(255, 215, 0, 0.3);
+}
+
+.function-card:hover::after {
+    opacity: 1;
+}
+
+.card-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.function-card h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.function-card p {
+    color: #666;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+}
+
+/* 按钮样式 */
+.btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    min-width: 120px;
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, #3498db, #2980b9);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(45deg, #2980b9, #1f4e79);
+    transform: scale(1.05);
+}
+
+.btn-secondary {
+    background: linear-gradient(45deg, #9b59b6, #8e44ad);
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: linear-gradient(45deg, #8e44ad, #6c3483);
+    transform: scale(1.05);
+}
+
+.btn-accent {
+    background: linear-gradient(45deg, #e74c3c, #c0392b);
+    color: white;
+}
+
+.btn-accent:hover {
+    background: linear-gradient(45deg, #c0392b, #a93226);
+    transform: scale(1.05);
+}
+
+.btn-success {
+    background: linear-gradient(45deg, #27ae60, #229954);
+    color: white;
+}
+
+.btn-success:hover {
+    background: linear-gradient(45deg, #229954, #1e8449);
+    transform: scale(1.05);
+}
+
+.btn-copy {
+    background: linear-gradient(45deg, #f39c12, #e67e22);
+    color: white;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+}
+
+.btn-copy:hover {
+    background: linear-gradient(45deg, #e67e22, #d35400);
+    transform: scale(1.05);
+}
+
+
+/* CDK区域按钮布局 */
+.cdk-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+#cdk-card .btn {
+    min-width: 100px;
+    font-size: 0.9rem;
+    padding: 10px 16px;
+}
+
+/* 页脚 */
+.footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+}
+
+/* 模态框样式 */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 5% auto;
+    padding: 30px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+}
+
+.close:hover {
+    color: #000;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    
+    .game-logo {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .game-title {
+        font-size: 2.2rem;
+    }
+    
+    .subtitle {
+        font-size: 1rem;
+    }
+    
+    .function-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .function-card {
+        padding: 25px;
+    }
+    
+    .qq-group {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .modal-content {
+        margin: 10% auto;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .game-logo {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .game-title {
+        font-size: 1.8rem;
+    }
+    
+    .function-card {
+        padding: 20px;
+    }
+    
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+        min-width: 100px;
+    }
+}
