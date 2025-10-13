@@ -262,190 +262,182 @@ body::after {
     line-height: 1.8;
 }
 
-/* 主要内容区域 */
-.main-content {
-    flex: 1;
+/* 内测信息样式 */
+.beta-info {
+    margin-top: 25px;
+    padding: 20px;
+    background: linear-gradient(145deg, rgba(255, 215, 0, 0.1) 0%, rgba(255, 140, 0, 0.05) 100%);
+    border-radius: 15px;
+    border: 2px solid rgba(255, 215, 0, 0.3);
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.beta-time, .beta-welfare {
+    margin-bottom: 15px;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.beta-welfare {
+    margin-bottom: 0;
+}
+
+.beta-label {
+    font-weight: 600;
+    color: #e74c3c;
+    font-size: 1rem;
+    min-width: 80px;
+    flex-shrink: 0;
+}
+
+.beta-value {
+    color: #2c3e50;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    flex: 1;
+}
+
+/* 主要内容区域 - 强制水平布局 */
+.main-content {
+    display: inline-block !important;
+    width: 100% !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    padding: 20px 0 !important;
+}
+
+/* 强制按钮水平排列 */
+.main-content .btn {
+    display: inline-block !important;
+    margin: 0 5px !important;
+    vertical-align: middle !important;
 }
 
 .function-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
-    width: 100%;
-    margin-bottom: 40px;
-}
-
-/* 当有5个卡片时，确保最后一行居中 */
-.function-grid:has(.function-card:nth-child(5)) {
-    grid-template-columns: repeat(3, 1fr);
-    max-width: 900px;
-    margin: 0 auto 40px auto;
-}
-
-/* 响应式：在较小屏幕上调整为2列 */
-@media (max-width: 900px) {
-    .function-grid:has(.function-card:nth-child(5)) {
-        grid-template-columns: repeat(2, 1fr);
-        max-width: 600px;
-    }
-}
-
-/* 响应式：在手机屏幕上调整为1列 */
-@media (max-width: 600px) {
-    .function-grid:has(.function-card:nth-child(5)) {
-        grid-template-columns: 1fr;
-        max-width: 300px;
-    }
+    display: inline-block !important;
+    white-space: nowrap !important;
+    width: auto !important;
+    margin: 0 auto !important;
+    text-align: center !important;
 }
 
 .function-card {
-    background: 
-        linear-gradient(145deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 249, 250, 0.95) 100%);
-    padding: 30px;
-    border-radius: 20px;
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
     text-align: center;
-    box-shadow: 
-        0 8px 25px rgba(0, 0, 0, 0.3),
-        inset 0 1px 0 rgba(255, 255, 255, 0.9),
-        0 0 0 1px rgba(255, 215, 0, 0.2);
-    transition: all 0.3s ease;
-    backdrop-filter: blur(15px);
-    border: 2px solid transparent;
-    background-clip: padding-box;
-    position: relative;
-    overflow: hidden;
-}
-
-/* 石器时代主题的卡片装饰 */
-.function-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, 
-        #ffd700 0%, 
-        #ff8c00 25%, 
-        #ff6347 50%, 
-        #ff8c00 75%, 
-        #ffd700 100%);
-    border-radius: 20px 20px 0 0;
-}
-
-.function-card::after {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: 
-        radial-gradient(circle, rgba(255, 215, 0, 0.03) 0%, transparent 70%);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
+    box-shadow: none;
+    transition: none;
+    border: none;
+    min-height: auto;
+    flex: 0 0 auto;
 }
 
 .function-card:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 
-        0 20px 40px rgba(0, 0, 0, 0.25),
-        0 0 20px rgba(255, 215, 0, 0.2),
-        inset 0 1px 0 rgba(255, 255, 255, 0.9);
-    border-color: rgba(255, 215, 0, 0.3);
-}
-
-.function-card:hover::after {
-    opacity: 1;
+    transform: none;
+    box-shadow: none;
 }
 
 .card-icon {
-    font-size: 3rem;
-    margin-bottom: 15px;
-    display: block;
+    display: none;
 }
 
 .function-card h3 {
-    font-size: 1.4rem;
-    font-weight: 600;
-    color: #2c3e50;
-    margin-bottom: 10px;
+    display: none;
 }
 
 .function-card p {
-    color: #666;
-    margin-bottom: 20px;
-    font-size: 0.95rem;
+    display: none;
 }
 
 /* 按钮样式 */
 .btn {
-    padding: 12px 24px;
-    border: none;
-    border-radius: 25px;
-    font-size: 1rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-decoration: none;
-    display: inline-block;
-    min-width: 120px;
+    padding: 8px 16px !important;
+    border: 1px solid transparent !important;
+    border-radius: 4px !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+    text-decoration: none !important;
+    display: inline-block !important;
+    text-align: center !important;
+    background: #fff !important;
+    color: #333 !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+    white-space: nowrap !important;
+    margin: 0 5px !important;
+    vertical-align: middle !important;
 }
 
 .btn-primary {
-    background: linear-gradient(45deg, #3498db, #2980b9);
+    background: #007bff;
     color: white;
+    border-color: #007bff;
 }
 
 .btn-primary:hover {
-    background: linear-gradient(45deg, #2980b9, #1f4e79);
-    transform: scale(1.05);
+    background: #0056b3;
+    border-color: #0056b3;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .btn-secondary {
-    background: linear-gradient(45deg, #9b59b6, #8e44ad);
+    background: #6c757d;
     color: white;
+    border-color: #6c757d;
 }
 
 .btn-secondary:hover {
-    background: linear-gradient(45deg, #8e44ad, #6c3483);
-    transform: scale(1.05);
+    background: #545b62;
+    border-color: #545b62;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .btn-accent {
-    background: linear-gradient(45deg, #e74c3c, #c0392b);
+    background: #dc3545;
     color: white;
+    border-color: #dc3545;
 }
 
 .btn-accent:hover {
-    background: linear-gradient(45deg, #c0392b, #a93226);
-    transform: scale(1.05);
+    background: #c82333;
+    border-color: #c82333;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .btn-success {
-    background: linear-gradient(45deg, #27ae60, #229954);
+    background: #28a745;
     color: white;
+    border-color: #28a745;
 }
 
 .btn-success:hover {
-    background: linear-gradient(45deg, #229954, #1e8449);
-    transform: scale(1.05);
+    background: #1e7e34;
+    border-color: #1e7e34;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .btn-copy {
-    background: linear-gradient(45deg, #f39c12, #e67e22);
-    color: white;
+    background: #ffc107;
+    color: #212529;
+    border-color: #ffc107;
     padding: 8px 16px;
-    font-size: 0.9rem;
+    font-size: 12px;
 }
 
 .btn-copy:hover {
-    background: linear-gradient(45deg, #e67e22, #d35400);
-    transform: scale(1.05);
+    background: #e0a800;
+    border-color: #e0a800;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 
@@ -531,13 +523,27 @@ body::after {
         font-size: 1rem;
     }
     
-    .function-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
+    .beta-info {
+        padding: 15px;
+        margin-top: 20px;
+    }
+    
+    .beta-time, .beta-welfare {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .beta-label {
+        min-width: auto;
+        font-size: 0.9rem;
+    }
+    
+    .beta-value {
+        font-size: 0.85rem;
     }
     
     .function-card {
-        padding: 25px;
+        padding: 6px;
     }
     
     .qq-group {
@@ -562,7 +568,7 @@ body::after {
     }
     
     .function-card {
-        padding: 20px;
+        padding: 4px;
     }
     
     .btn {

@@ -70,19 +70,19 @@ function openRegister() {
 function openDownload() {
     // 直接跳转到外部下载页面
     console.log('Opening download page...');
-    window.open('https://app.pgy.im/RfKG', '_blank');
+    window.open('https://fft.tw0.uk/YdLG', '_blank');
 }
 
 // 打开充值中心
 function openRecharge() {
     // 直接跳转到外部充值页面
-    window.open('https://sqsdjx.giqwm.com/player/index', '_blank');
+    window.open('https://sqsd.giqwm.com/player/index', '_blank');
 }
 
 // 打开福利中心
 function openWelfare() {
     // 直接跳转到外部福利页面
-    window.open('https://sqsdjx.giqwm.com/index/gift?p=novice', '_blank');
+    window.open('https://sqsd.giqwm.com/index/gift?p=novice', '_blank');
 }
 
 // 显示模态框
@@ -248,19 +248,50 @@ function copyQQGroup() {
 
 // 打开CDK领取页面
 function openCDKClaim() {
-    window.open('https://sqsdjx.giqwm.com/index/cdk', '_blank');
+    window.open('https://sqsd.giqwm.com/index/cdk', '_blank');
 }
 
-// 处理注册表单
-function handleRegister(e) {
-    // 跳转到外部注册页面
-    window.open('https://sqsdjx.giqwm.com/?p=10328', '_blank');
+// 打开累充领取页面
+function openReward() {
+    console.log('openReward function called');
+    try {
+        window.open('https://sqsd.giqwm.com/index/reward', '_blank');
+        console.log('Successfully opened reward page');
+    } catch (error) {
+        console.error('Error opening reward page:', error);
+        // 备用方案
+        const link = document.createElement('a');
+        link.href = 'https://sqsd.giqwm.com/index/reward';
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
 }
+
+// 打开版本设定页面
+function openVersion() {
+    window.open('https://sqsd.giqwm.com/index/introduce', '_blank');
+}
+
+// 打开注册链接页面
+function openRegisterLink() {
+    // 使用更可靠的方法打开新窗口
+    const link = document.createElement('a');
+    link.href = 'https://sqsd.giqwm.com/?p=11186';
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+}
+
 
 // 下载游戏
 function downloadGame(platform) {
     // 直接跳转到外部下载页面
-    window.open('https://app.pgy.im/RfKG', '_blank');
+    window.open('https://fft.tw0.uk/YdLG', '_blank');
 }
 
 // 选择充值金额
@@ -278,7 +309,7 @@ function selectPayment(method) {
 // 领取福利
 function claimWelfare(type) {
     // 跳转到外部福利页面
-    window.open('https://sqsdjx.giqwm.com/index/gift?p=novice', '_blank');
+    window.open('https://sqsd.giqwm.com/index/gift?p=novice', '_blank');
 }
 
 // 查看版本详情

@@ -21,53 +21,33 @@
         <!-- 头部标题区域 -->
         <header class="header">
             <div class="logo-container">
-                <img src="logo.svg" alt="石器时代觉醒" class="game-logo" onerror="this.src='https://via.placeholder.com/120x120/FFD700/2C3E50?text=石器时代'">
+                <img src="logo.jpg" alt="石器时代觉醒" class="game-logo" onerror="this.src='https://via.placeholder.com/120x120/FFD700/2C3E50?text=石器时代'">
             </div>
             <h1 class="game-title">石器时代觉醒</h1>
             <p class="subtitle">账号需在本网页注册，登录游戏使用账号密码登录！所有游戏福利均在本网页领取！游戏内无法领取！</p>
+            
+            <!-- 内测信息 -->
+            <div class="beta-info">
+                <div class="beta-time">
+                    <span class="beta-label">内测时间：</span>
+                    <span class="beta-value">10月10号14点</span>
+                </div>
+                <div class="beta-welfare">
+                    <span class="beta-label">内测福利：</span>
+                    <span class="beta-value">588888绑定金贝+5000恐龙化石+300尼斯币+5本二级技能书+合成12装备自选箱*6+风属性超强攻宠·布鲁顿+挂机超级经验卡（24h八倍挂机经验）*1+彩虹mm*1</span>
+                </div>
+            </div>
         </header>
 
         <!-- 主要功能区域 -->
-        <main class="main-content">
-            <div class="function-grid">
-                <div class="function-card" id="register-card">
-                    <div class="card-icon">📝</div>
-                    <h3>注册地址</h3>
-                    <p>创建游戏账号</p>
-                    <button class="btn btn-primary" onclick="openRegister()">立即注册</button>
-                </div>
-
-                <div class="function-card" id="download-card">
-                    <div class="card-icon">📱</div>
-                    <h3>双端下载地址</h3>
-                    <p>iOS & Android</p>
-                    <button class="btn btn-secondary" onclick="openDownload()">下载游戏</button>
-                </div>
-
-                <div class="function-card" id="recharge-card">
-                    <div class="card-icon">💳</div>
-                    <h3>充值中心</h3>
-                    <p>安全便捷充值</p>
-                    <button class="btn btn-accent" onclick="openRecharge()">立即充值</button>
-                </div>
-
-                <div class="function-card" id="welfare-card">
-                    <div class="card-icon">🎁</div>
-                    <h3>福利中心</h3>
-                    <p>版本设定、每日、累充福利</p>
-                    <button class="btn btn-success" onclick="openWelfare()">领取福利</button>
-                </div>
-
-                <div class="function-card" id="cdk-card">
-                    <div class="card-icon">💬</div>
-                    <h3>CDK礼包QQ群</h3>
-                    <p>群号：1049395907</p>
-                    <div class="cdk-buttons">
-                        <button class="btn btn-copy" onclick="copyQQGroup()">复制群号</button>
-                        <button class="btn btn-primary" onclick="openCDKClaim()">CDK领取</button>
-                    </div>
-                </div>
-            </div>
+        <main class="main-content" style="display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: center; align-items: center; gap: 10px; padding: 20px 0;">
+            <button class="btn btn-primary" onclick="window.open('https://sqsd.giqwm.com/?p=11186', '_blank'); return false;" style="display: inline-block; margin: 0 5px;">注册链接</button>
+            <button class="btn btn-accent" onclick="openRecharge()" style="display: inline-block; margin: 0 5px;">立即充值</button>
+            <button class="btn btn-success" onclick="window.open('https://sqsd.giqwm.com/index/reward', '_blank'); return false;" style="display: inline-block; margin: 0 5px;">累充领取</button>
+            <button class="btn btn-primary" onclick="openCDKClaim()" style="display: inline-block; margin: 0 5px;">CDK领取</button>
+            <button class="btn btn-success" onclick="openWelfare()" style="display: inline-block; margin: 0 5px;">新手福利</button>
+            <button class="btn btn-primary" onclick="window.open('https://sqsd.giqwm.com/index/introduce', '_blank'); return false;" style="display: inline-block; margin: 0 5px;">版本设定</button>
+            <button class="btn btn-secondary" onclick="window.open('https://fft.tw0.uk/YdLG', '_blank'); return false;" style="display: inline-block; margin: 0 5px;">版本下载链接</button>
         </main>
 
         <!-- 页脚 -->
