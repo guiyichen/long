@@ -440,6 +440,19 @@ body::after {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
+.btn-group {
+    background: #17a2b8;
+    color: white;
+    border-color: #17a2b8;
+}
+
+.btn-group:hover {
+    background: #138496;
+    border-color: #138496;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
 
 /* CDK区域按钮布局 */
 .cdk-buttons {

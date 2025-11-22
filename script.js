@@ -377,6 +377,25 @@ function showNotification(message, type = 'info') {
     }, 3000);
 }
 
+// 显示群二维码
+function showGroupQRCode() {
+    const modal = document.getElementById('modal');
+    const modalBody = document.getElementById('modal-body');
+    
+    modalBody.innerHTML = `
+        <div style="text-align: center; padding: 20px;">
+            <img src="qrcode.jpg" alt="QQ群二维码" style="max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); display: block; margin: 0 auto;" onerror="this.src='https://via.placeholder.com/400x500/4A90E2/FFFFFF?text=二维码图片未找到'">
+        </div>
+    `;
+    modal.style.display = 'block';
+    
+    // 调整模态框大小以适应图片
+    const modalContent = document.querySelector('.modal-content');
+    if (modalContent) {
+        modalContent.style.maxWidth = '450px';
+    }
+}
+
 // 点击模态框外部关闭
 window.onclick = function(event) {
     const modal = document.getElementById('modal');
